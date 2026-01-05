@@ -364,7 +364,7 @@ def sample_download_and_preparation(images_train_test):
     log_message(f"[INFO] Valid data after filtering: {valid_data_train_test.shape}")
     
     trainer = ModelTrainer(bucket_name, country, folder_model, interface.get_active_checkbox)
-    trainer.split_and_train(valid_data_train_test, bi=[0, 1, 2, 3], li=4)
+    trainer.split_and_train(valid_data_train_test, bi=[0, 1, 2, 3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25], li=26)
 
 # ====================================
 # 🚀 RUNNING THE INTERFACE
