@@ -65,10 +65,10 @@ from IPython.display import display, HTML, clear_output
 # Definir diretórios para o armazenamento de dados e saída do modelo
 folder = f'/content/mapbiomas-fire/sudamerica/{country}'  # Diretório principal onde os dados são armazenados
 
-folder_samples = f'{folder}/training_samples'  # Diretório para armazenamento de dados de amostra
-folder_model = f'{folder}/models_col1'  # Diretório para armazenamento da saída dos modelos
+folder_samples = f'{folder}/training_samples_24b'  # Diretório para armazenamento de dados de amostra
+folder_model = f'{folder}/models_col1_24b'  # Diretório para armazenamento da saída dos modelos
 folder_images = f'{folder}/tmp1'  # Diretório para armazenamento temporário de imagens
-folder_mosaic = f'{folder}/mosaics_cog'  # Diretório para arquivos COG (Cloud-Optimized GeoTIFF)
+folder_mosaic = f'{folder}/mosaics_24b'  # Diretório para arquivos COG (Cloud-Optimized GeoTIFF)
 
 if not os.path.exists(folder_samples):
     os.makedirs(folder_samples)
