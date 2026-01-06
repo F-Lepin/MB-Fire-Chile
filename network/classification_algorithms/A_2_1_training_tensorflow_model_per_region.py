@@ -254,7 +254,7 @@ class FileManager:
 
     def download_image(self, image):
         self.log_message(f"[INFO] Starting download of: {image}")
-        download_command = f'gsutil -m cp gs://{self.bucket_name}/sudamerica/{self.country}training_samples_24b/r4/2017/{image} {self.folder_samples}/'
+        download_command = f'gsutil -m cp gs:/{self.bucket_name}/sudamerica/{self.country}training_samples_24b/r4/2017/{image} {self.folder_samples}/'
         process = subprocess.Popen(download_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         process.wait()
 
