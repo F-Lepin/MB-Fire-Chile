@@ -252,19 +252,22 @@ class FileManager:
         self.fs = fs
         self.log_message = log_func
 
-def download_image(self, image):
-    self.log_message(f"[INFO] Starting download of: {image}")
-    download_command = (
-        f'gsutil -m cp '
-        f'gs://{self.bucket_name}/sudamerica/{self.country}/training_samples_24b/r4/2017/{image} '
-        f'{self.folder_samples}/'
-    )
-    process = subprocess.Popen(
-        download_command, shell=True,
-        stdout=subprocess.PIPE, stderr=subprocess.PIPE
-    )
-    process.wait()
+    def download_image(self, image):
+        self.log_message(f"[INFO] Starting download of: {image}")
 
+        download_command = (
+            f'gsutil -m cp '
+            f'gs://{self.bucket_name}/sudamerica/{self.country}/training_samples_24b/r4/2017/{image} '
+            f'{self.folder_samples}/'
+        )
+
+        process = subprocess.Popen(
+            download_command,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        process.wait()
 
         if process.returncode == 0:
             self.log_message(f"[SUCCESS] Download completed for {image}.")
@@ -281,13 +284,15 @@ def download_image(self, image):
             initial_size = os.path.getsize(file_path)
         except FileNotFoundError:
             initial_size = 0
+
         time.sleep(1)
+
         try:
             current_size = os.path.getsize(file_path)
         except FileNotFoundError:
             current_size = 0
-        return current_size - initial_size
 
+        return current_size - initial_size
 
 # ====================================
 # 🧰 SUPPORT FUNCTIONS (utils)
