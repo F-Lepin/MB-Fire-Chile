@@ -106,7 +106,7 @@ class TrainingInterface:
         """
         Return a set of model checkpoint base names (excluding hyperparameters).
         """
-        prefix_path = f"{base_path}{self.country}/models_col1/"
+        prefix_path = f"{base_path}{self.country}/models_col1_24b/"
         try:
             files = fs.ls(prefix_path)
             model_files = [
