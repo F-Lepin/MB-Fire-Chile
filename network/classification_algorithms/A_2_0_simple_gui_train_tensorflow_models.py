@@ -48,7 +48,7 @@ class TrainingInterface:
         """
         List files in 'training_samples' folder for the selected country.
         """
-        path = f"{base_path}{self.country}/training_samples/"
+        path = f"{base_path}{self.country}/training_samples_24b/r4/2017/"
         try:
             return [file.split('/')[-1] for file in fs.ls(path) if file.split('/')[-1]]
         except FileNotFoundError:
