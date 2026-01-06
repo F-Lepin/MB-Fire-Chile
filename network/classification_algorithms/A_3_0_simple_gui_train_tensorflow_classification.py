@@ -86,7 +86,7 @@ class ModelRepository:
             return [], 0
 
     def list_mosaics(self, region):
-        mosaics_folder = f"{self.base_folder}/mosaics_col1_24b/"
+        mosaics_folder = f"{self.base_folder}/mosaics_col1_cog/"
         try:
             files = self.fs.ls(mosaics_folder)
             return [file.split('/')[-1] for file in files if f"_{region}_" in file], len(files)
