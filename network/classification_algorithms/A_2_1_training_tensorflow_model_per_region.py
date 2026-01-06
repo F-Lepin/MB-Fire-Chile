@@ -201,7 +201,7 @@ class ModelTrainer:
                 json.dump(hyperparameters, json_file)
             log_message(f'[INFO] Hyperparameters saved to: {json_path}')
 
-            bucket_model_path = f'gs://{self.bucket_name}/sudamerica/{self.country}/models_col1/'
+            bucket_model_path = f'gs://{self.bucket_name}/sudamerica/{self.country}/models_col1_24b/'
             try:
                 subprocess.check_call(f'gsutil cp {model_path}.* {json_path} {bucket_model_path}', shell=True)
                 log_message(f'[INFO] Model uploaded to GCS at: {bucket_model_path}')
